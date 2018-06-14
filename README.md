@@ -1,10 +1,6 @@
-# Watson Assistant (formerly Conversation) Sample Application [![Build Status](https://travis-ci.org/watson-developer-cloud/assistant-simple.svg?branch=master)](http://travis-ci.org/watson-developer-cloud/assistant-simple) [![codecov.io](https://codecov.io/github/watson-developer-cloud/assistant-simple/coverage.svg?branch=master)](https://codecov.io/github/watson-developer-cloud/assistant-simple?branch=master)
+# Watson Assistant (formerly Conversation) Sample Application for BCC Talk
 
-This Node.js app demonstrates the Watson Assistant service in a simple chat interface simulating a cognitive car dashboard.
-
-![Demo](readme_images/demo.gif)
-
-You can view a [demo][demo_url] of this app.
+This Node.js app demonstrates the Watson Assistant service in a simple chat interface simulating either a pizza ordering or wedding RSVP situation.
 
 ## Before you begin
 
@@ -12,7 +8,7 @@ You can view a [demo][demo_url] of this app.
     * [Sign up](https://console.ng.bluemix.net/registration/?target=/catalog/%3fcategory=watson) in IBM Cloud, or use an existing account. Your account must have available space for at least 1 app and 1 service.
 * Make sure that you have the following prerequisites installed:
     * The [Node.js](https://nodejs.org/#download) runtime, including the [npm][npm_link] package manager
-    * The [Cloud Foundry][cloud_foundry] command-line client
+    * The [Cloud Foundry][cloud_foundry] command-line client (not covered in this talk)
 
       Note: Ensure that you Cloud Foundry version is up to date
 
@@ -22,24 +18,18 @@ If you want to modify the app or use it as a basis for building your own app, in
 
 ### Getting the files
 
-Use GitHub to clone the repository locally, or [download the .zip file](https://github.com/watson-developer-cloud/assistant-simple/archive/master.zip) of the repository and extract the files.
+Use GitHub to clone the repository locally.
 
 ### Setting up the Watson Assistant service
 
 You can use an exisiting instance of the Watson Assistant service. Otherwise, follow these steps.
 
-1. At the command line, go to the local project directory (`assistant-simple`).
+1. In your browser, navigate to [your IBM Cloud console] (https://console.ng.bluemix.net/dashboard/services).
 
-1. Connect to IBM Cloud with the Cloud Foundry command-line tool. For more information, see the Watson Developer Cloud [documentation][cf_docs].
-    ```bash
-    cf login
-    ```
+1. Click the button to **Create Resource** and then filter using the side menu on "Watson". 
 
-1. Create an instance of the Watson Assistant service in IBM Cloud (our CLI is being updated, for now, use the `create-service` conversation command). For example:
+1. Click Watson Assistant and walk through the steps to start the service.
 
-    ```bash
-    cf create-service conversation free my-watson-assistant-service
-    ```
 
 ### Importing the Watson Assistant workspace
 
@@ -57,7 +47,7 @@ You can use an exisiting instance of the Watson Assistant service. Otherwise, fo
 
 1. Select **Everything (Intents, Entities, and Dialog)** and then click **Import**. The car dashboard workspace is created.
 
-### Configuring the app environment
+### Configuring the app environment (not covered in this talk, grab credentials from UI)
 
 1. Copy or rename the `.env.example` file to `.env` (nothing before the dot).
 
@@ -120,23 +110,7 @@ You can use an exisiting instance of the Watson Assistant service. Otherwise, fo
 
 After your app is installed and running, experiment with it to see how it responds.
 
-The chat interface is on the left, and the JSON that the JavaScript code receives from the Watson Assistant service is on the right. Your questions and commands are interpreted using a small set of sample data trained with the following intents:
-
-    turn_on
-    turn_off
-    turn_up
-    turn_down
-    traffic_update
-    locate_amenity
-    weather
-    phone
-    capabilities
-    greetings
-    goodbyes
-
-Type a request, such as `music on` or `I want to turn on the windshield wipers`. The system understands your intent and responds. You can see the details of how your input was understood by examining the JSON data in the `Watson understands` section on the right side.
-
-For example, if you type `Turn on some music`, the JSON data shows that the system understood the `turn_on` intent with a high level of confidence, along with the `appliance` entity with a value of `music`.
+The chat interface is on the left, and the JSON that the JavaScript code receives from the Watson Assistant service is on the right. 
 
 For more information about intents, see the [Watson Assistant service documentation][doc_intents].
 
@@ -150,7 +124,7 @@ After you have the app deployed and running, you can explore the source files an
 * Modify the .html file to change the appearance of the app page.
 * Use the Watson Assistant tool to train the service for new intents, or to modify the dialog flow. For more information, see the [Watson Assistant service documentation][docs_landing].
 
-## Deploying to IBM Cloud
+## Deploying to IBM Cloud (not covered in this talk)
 
 You can use Cloud Foundry to deploy your local version of the app to IBM Cloud.
 
