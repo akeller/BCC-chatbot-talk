@@ -69,6 +69,7 @@ Alternatively, from the IBM Cloud Conversation page (page where the Launch tool 
 1. Click the **Import workspace** icon in the Watson Assistant service tool. Specify the location of the workspace JSON file in your local copy of the app project:
 
     [Watson Pizza Example](/watson_pizza.json)
+    
     [Wedding RSVP Example](/weddingRSVP.json)
 
 1. Select **Everything (Intents, Entities, and Dialog)** and then click **Import**. The workspace is created.
