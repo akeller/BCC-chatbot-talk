@@ -28,8 +28,35 @@ You can use an exisiting instance of the Watson Assistant service. Otherwise, fo
 
 1. Click the button to **Create Resource** and then filter using the side menu on "Watson". 
 
-1. Click Watson Assistant and walk through the steps to start the service.
+1. Click Watson Assistant and walk through the steps to start the service. A Lite account will be all that is necessary for this demo.
 
+### Importing from Bot Asset Exchange (BAE) [optional]
+
+1. In your browser, navigate to the [Bot Asset Exchange](https://developer.ibm.com/code/exchanges/bots/).
+
+1. Choose a bot you want to use and click download.
+
+1. Login with your IBM Cloud account information.
+
+1. The page that loads contains your workspaces. Click the icon to import a workspace.
+
+![alt text][workspaces]
+
+1. Import the json file that you downloaded. Choose the file and import everything. This will create a new workspace with all the intents, entities, and dialog intact.
+
+1. Click the new workspace tile to open it.
+
+![alt text][Workspace-dashboard]
+
+1. Click the Deploy icon.
+
+1. Click Credentials (next to Deploy Options). Copy your workspace ID, username and password. Enter these as strings in the .env file to access the API.
+
+![alt text][credentials]
+
+...
+
+Alternatively, from the IBM Cloud Conversation page (page where the Launch tool button sits), click "Service credentials" then expand "View credentials" to reveal your username and password. Enter these as strings in the .env file to access the API. This does not show your workspace ID.
 
 ### Importing the Watson Assistant workspace
 
@@ -37,41 +64,20 @@ You can use an exisiting instance of the Watson Assistant service. Otherwise, fo
 
 1. From the **All Items** tab, click the newly created Watson Assistant service in the **Services** list.
 
-    ![Screen capture of Services list](readme_images/conversation_service.png)
-
 1. On the Service Details page, click **Launch tool**.
 
 1. Click the **Import workspace** icon in the Watson Assistant service tool. Specify the location of the workspace JSON file in your local copy of the app project:
 
-    `<project_root>/training/car_workspace.json`
+    [Watson Pizza Example](/watson_pizza.json)
+    [Wedding RSVP Example](/weddingRSVP.json)
 
-1. Select **Everything (Intents, Entities, and Dialog)** and then click **Import**. The car dashboard workspace is created.
+1. Select **Everything (Intents, Entities, and Dialog)** and then click **Import**. The workspace is created.
 
-### Configuring the app environment (not covered in this talk, grab credentials from UI)
+### Configuring the app environment
 
 1. Copy or rename the `.env.example` file to `.env` (nothing before the dot).
 
-1. Create a service key in the format `cf create-service-key <service_instance> <service_key>`. For example:
-
-    ```bash
-    cf create-service-key my-watson-assistant-service myKey
-    ```
-
-1. Retrieve the credentials from the service key using the command `cf service-key <service_instance> <service_key>`. For example:
-
-    ```bash
-    cf service-key my-watson-assistant-service myKey
-    ```
-
-   The output from this command is a JSON object, as in this example:
-
-    ```JSON
-    {
-      "password": "87iT7aqpvU7l",
-      "url": "https://gateway.watsonplatform.net/conversation/api",
-      "username": "ca2905e6-7b5d-4408-9192-e4d54d83e604"
-    }
-    ```
+1. Use the Assistant UI to get the username, password, and URL. 
 
 1. Paste  the `password` and `username` values (without quotation marks) from the JSON into the `ASSISTANT_PASSWORD` and `ASSISTANT_USERNAME` variables in the `.env` file. For example:
 
