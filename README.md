@@ -10,7 +10,7 @@ This Node.js app demonstrates the Watson Assistant service in a simple chat inte
     * The [Node.js](https://nodejs.org/#download) runtime, including the [npm][npm_link] package manager
     * The [Cloud Foundry][cloud_foundry] command-line client (not covered in this talk)
 
-      Note: Ensure that you Cloud Foundry version is up to date
+      Note: Ensure that your Cloud Foundry version is up to date
 
 ## Installing locally
 
